@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RMJ | Product Details</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+<header>
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+        <img src="images/logo.jpeg" alt="RMJ Logo">
+    </a>
+
+    <!-- Desktop Menu -->
+    <ul class="nav-links" id="navLinks">
+
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="my-orders.html">My Orders</a></li>
+
+    </ul>
+
+    <!-- Right Side Icons -->
+
+    <div class="nav-icons">
+
+        <!-- Mobile Shop -->
+        <a href="shop.html" class="mobile-shop">
+            <i class="fa-solid fa-store"></i>
+        </a>
+
+        <!-- Cart -->
+        <a href="cart.html" class="cart-icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+
+        <!-- Login -->
+        <a href="login.html" id="loginMenu" class="login-btn">
+            Login
+        </a>
+
+        <!-- Profile -->
+        <div id="profileMenu" style="display:none;"></div>
+
+        <!-- Hamburger -->
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </div>
+
+</nav>
+</header>
+<!-- ================= PRODUCT DETAILS ================= -->
+
+<section class="product-details">
+
+    <div class="product-image">
+<img id="productImage" src="" alt="">
+    </div>
+
+    <div class="product-info">
+<h1 id="productName"></h1>
+
+        <div class="rating">
+
+            ⭐⭐⭐⭐⭐
+            <span>(145 Reviews)</span>
+
+        </div>
+
+      <h2 class="price" id="productPrice"></h2>
+
+        <p class="stock" id="productStock"></p>
+
+      <p class="description" id="productDescription"></p>
+
+        <div class="quantity">
+
+            <label>Quantity</label>
+
+            <input type="number"
+                value="1"
+                min="1">
+
+        </div>
+
+        <div class="product-buttons">
+
+           <a href="#" class="btn" id="addToCart">
+
+    <i class="fa-solid fa-cart-shopping"></i>
+
+    Add To Cart
+
+</a>
+
+            <a href="checkout.html" class="btn">
+
+                Buy Now
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= PRODUCT FEATURES ================= -->
+
+<section class="why-choose">
+
+<h2>Product Features</h2>
+
+<div class="why-container">
+
+<div class="why-box">
+
+<i class="fa-solid fa-fire"></i>
+
+<h3>Heat Resistant</h3>
+
+<p>Perfect for daily cooking.</p>
+
+</div>
+
+<div class="why-box">
+
+<i class="fa-solid fa-shield"></i>
+
+<h3>Premium Quality</h3>
+
+<p>Long-lasting material.</p>
+
+</div>
+
+<div class="why-box">
+
+<i class="fa-solid fa-leaf"></i>
+
+<h3>Eco Friendly</h3>
+
+<p>Safe and healthy cookware.</p>
+
+</div>
+
+<div class="why-box">
+
+<i class="fa-solid fa-truck-fast"></i>
+
+<h3>Fast Delivery</h3>
+
+<p>Delivery all over Pakistan.</p>
+
+</div>
+
+</div>
+
+</section>
+<!-- ================= SPECIFICATIONS ================= -->
+
+<section class="featured">
+
+    <h2>Product Specifications</h2>
+
+    <table class="spec-table">
+
+        <tr>
+            <th>Material</th>
+            <td>Premium Aluminum</td>
+        </tr>
+
+        <tr>
+            <th>Coating</th>
+            <td>Non-Stick</td>
+        </tr>
+
+        <tr>
+            <th>Color</th>
+            <td>Black</td>
+        </tr>
+
+        <tr>
+            <th>Weight</th>
+            <td>1.2 KG</td>
+        </tr>
+
+        <tr>
+            <th>Warranty</th>
+            <td>1 Year</td>
+        </tr>
+
+    </table>
+
+</section>
+
+<!-- ================= RELATED PRODUCTS ================= -->
+
+<section class="featured">
+
+    <h2>Related Products</h2>
+
+    <div class="products">
+
+        <div class="card">
+
+            <img src="images/products/pot.jpg" alt="Cooking Pot">
+
+            <h3>Cooking Pot</h3>
+
+            <p>Rs. 4,999</p>
+
+            <a href="product.html">View Product</a>
+
+        </div>
+
+        <div class="card">
+
+            <img src="images/products/knife.jpg" alt="Knife Set">
+
+            <h3>Knife Set</h3>
+
+            <p>Rs. 2,499</p>
+
+            <a href="product.html">View Product</a>
+
+        </div>
+
+        <div class="card">
+
+            <img src="images/products/spoon.jpg" alt="Spoon Set">
+
+            <h3>Silicone Spoon Set</h3>
+
+            <p>Rs. 1,299</p>
+
+            <a href="product.html">View Product</a>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= WRITE REVIEW ================= -->
+
+<section class="write-review">
+
+    <h2>Write a Review</h2>
+
+    <form id="reviewForm">
+
+        <input
+            type="text"
+            id="reviewName"
+            placeholder="Your Name"
+            required>
+
+        <div class="star-rating">
+
+    <i class="fa-solid fa-star star" data-value="1"></i>
+    <i class="fa-solid fa-star star" data-value="2"></i>
+    <i class="fa-solid fa-star star" data-value="3"></i>
+    <i class="fa-solid fa-star star" data-value="4"></i>
+    <i class="fa-solid fa-star star" data-value="5"></i>
+
+</div>
+
+<input
+type="hidden"
+id="reviewRating"
+value="5">
+        <textarea
+            id="reviewText"
+            placeholder="Write your review..."
+            required></textarea>
+
+        <button type="submit" class="btn">
+            Submit Review
+        </button>
+
+    </form>
+
+</section>
+
+<!-- ================= CUSTOMER REVIEWS ================= -->
+
+<section class="reviews">
+
+    <h2>Customer Reviews</h2>
+
+    <div class="review-container" id="reviewsList">
+
+        <div class="review-card">
+
+            <h3>⭐⭐⭐⭐⭐</h3>
+
+            <p>
+                Excellent quality. Very easy to cook and clean.
+            </p>
+
+            <strong>Ali Khan</strong>
+
+        </div>
+
+        <div class="review-card">
+
+            <h3>⭐⭐⭐⭐⭐</h3>
+
+            <p>
+                Amazing product. Worth every rupee.
+            </p>
+
+            <strong>Ahmed Raza</strong>
+
+        </div>
+
+        <div class="review-card">
+
+            <h3>⭐⭐⭐⭐⭐</h3>
+
+            <p>
+                Delivery was fast and packaging was perfect.
+            </p>
+
+            <strong>Sana Malik</strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div>
+
+            <h2>RMJ Kitchen Essentials</h2>
+
+            <p>
+                Premium Kitchen Products For Every Home.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a><br>
+
+            <a href="shop.html">Shop</a><br>
+
+            <a href="about.html">About</a><br>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+        <div>
+
+            <h3>Payment Methods</h3>
+
+            <p>✔ JazzCash</p>
+
+            <p>✔ EasyPaisa</p>
+
+            <p>✔ Cash On Delivery</p>
+
+        </div>
+
+        <div>
+
+            <h3>Follow Us</h3>
+
+            <a href="#"><i class="fab fa-facebook"></i></a>
+
+            <a href="#"><i class="fab fa-instagram"></i></a>
+
+            <a href="#"><i class="fab fa-youtube"></i></a>
+
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p class="copyright">
+
+        © 2026 RMJ Kitchen Essentials | All Rights Reserved.
+
+    </p>
+
+</footer>
+<script src="js/product.js"></script>
+<script src="js/user-profile.js"></script>
+<script src="js/script.js"></script>
+
+
+</body>
+
+</html>

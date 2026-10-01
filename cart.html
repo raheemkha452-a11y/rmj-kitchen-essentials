@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RMJ | Shopping Cart</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!--========== HEADER ==========-->
+
+<header>
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+        <img src="images/logo.jpeg" alt="RMJ Logo">
+    </a>
+
+    <!-- Desktop Menu -->
+    <ul class="nav-links" id="navLinks">
+
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="my-orders.html">My Orders</a></li>
+
+    </ul>
+
+    <!-- Right Side Icons -->
+
+    <div class="nav-icons">
+
+        <!-- Mobile Shop -->
+        <a href="shop.html" class="mobile-shop">
+            <i class="fa-solid fa-store"></i>
+        </a>
+
+        <!-- Cart -->
+        <a href="cart.html" class="cart-icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+
+        <!-- Login -->
+        <a href="login.html" id="loginMenu" class="login-btn">
+            Login
+        </a>
+
+        <!-- Profile -->
+        <div id="profileMenu" style="display:none;"></div>
+
+        <!-- Hamburger -->
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </div>
+
+</nav>
+</header>
+
+<!--========== PAGE TITLE ==========-->
+
+<section class="shop-banner">
+
+<h1>Your Shopping Cart</h1>
+
+<p>Review your selected products</p>
+
+</section>
+
+<!--========== CART TABLE ==========-->
+<div class="cart-container">
+
+<section class="cart-section">
+
+<table class="cart-table">
+
+<thead>
+
+<tr>
+
+<th>Product</th>
+
+<th>Price</th>
+
+<th>Quantity</th>
+
+<th>Total</th>
+
+<th>Remove</th>
+
+</tr>
+
+</thead>
+
+<tbody id="cartItems">
+
+</tbody>
+
+</table>
+
+
+<div id="emptyCart" class="empty-cart">
+
+    <img src="images/empty-cart.png" alt="Empty Cart">
+
+    <h2>Your Cart is Empty</h2>
+
+    <p>Looks like you haven't added any products yet.</p>
+
+    <a href="shop.html" class="btn">Continue Shopping</a>
+
+</div>
+</section>
+<!--========== ORDER SUMMARY ==========-->
+
+<section class="cart-summary sticky-summary">
+
+<h2>Order Summary</h2>
+
+<div class="summary-box">
+
+<p>
+Subtotal
+<span id="subtotal">Rs. 0</span>
+</p>
+
+<p>
+Delivery
+<span id="delivery">Rs. 250</span>
+</p>
+
+<hr>
+
+<h3>
+Grand Total
+<span id="grandTotal">Rs. 250</span>
+</h3>
+
+<a href="checkout.html" class="btn">
+
+Proceed To Checkout
+
+</a>
+
+</div>
+
+</section>
+</div>
+<!-- ================= COUPON ================= -->
+
+<section class="coupon-section">
+
+    <h2>Have a Coupon?</h2>
+
+    <div class="coupon-box">
+
+        <input type="text" placeholder="Enter Coupon Code">
+
+        <button class="btn">Apply Coupon</button>
+
+    </div>
+
+</section>
+
+<!-- ================= DELIVERY INFO ================= -->
+
+<section class="why-choose">
+
+    <h2>Delivery Information</h2>
+
+    <div class="why-container">
+
+        <div class="why-box">
+
+            <i class="fa-solid fa-truck-fast"></i>
+
+            <h3>Fast Delivery</h3>
+
+            <p>Delivery available all over Pakistan.</p>
+
+        </div>
+
+        <div class="why-box">
+
+            <i class="fa-solid fa-box-open"></i>
+
+            <h3>Safe Packaging</h3>
+
+            <p>Products are packed securely.</p>
+
+        </div>
+
+        <div class="why-box">
+
+            <i class="fa-solid fa-credit-card"></i>
+
+            <h3>Easy Payment</h3>
+
+            <p>JazzCash, EasyPaisa & Cash on Delivery.</p>
+
+        </div>
+
+        <div class="why-box">
+
+            <i class="fa-solid fa-rotate-left"></i>
+
+            <h3>Easy Returns</h3>
+
+            <p>7-Day return policy available.</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div>
+
+            <h2>RMJ Kitchen Essentials</h2>
+
+            <p>Premium Kitchen Products For Every Home.</p>
+
+        </div>
+
+        <div>
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a><br>
+            <a href="shop.html">Shop</a><br>
+            <a href="about.html">About</a><br>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+        <div>
+
+            <h3>Payments</h3>
+
+            <p>✔ JazzCash</p>
+            <p>✔ EasyPaisa</p>
+            <p>✔ Cash On Delivery</p>
+
+        </div>
+
+        <div>
+
+            <h3>Follow Us</h3>
+
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p class="copyright">
+
+        © 2026 RMJ Kitchen Essentials | All Rights Reserved.
+
+    </p>
+
+</footer>
+<script src="js/cart.js"></script>
+<script src="js/user-profile.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

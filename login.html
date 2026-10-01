@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RMJ | Login</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!--================ HEADER ================-->
+<header>
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+        <img src="images/logo.jpeg" alt="RMJ Logo">
+    </a>
+
+    <!-- Desktop Menu -->
+    <ul class="nav-links" id="navLinks">
+
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="my-orders.html">My Orders</a></li>
+        
+
+    </ul>
+
+    <!-- Right Side Icons -->
+
+    <div class="nav-icons">
+
+        <!-- Mobile Shop -->
+        <a href="shop.html" class="mobile-shop">
+            <i class="fa-solid fa-store"></i>
+        </a>
+
+        <!-- Cart -->
+        <a href="cart.html" class="cart-icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+
+        <!-- Login -->
+        <a href="login.html" id="loginMenu" class="nav-login-btn">
+    Login
+</a>
+
+        <!-- Profile -->
+        <div id="profileMenu" style="display:none;"></div>
+
+        <!-- Hamburger -->
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </div>
+
+</nav>
+</header>
+
+<!--================ LOGIN PAGE ================-->
+
+<section class="login-section">
+
+<div class="login-container">
+
+<div class="login-box">
+
+<h2>Welcome Back</h2>
+
+<p>Login to your RMJ account</p>
+
+<form id="loginForm">
+
+<div class="input-box">
+
+<label>Email Address</label>
+
+<input
+type="email"
+id="email"
+placeholder="Enter your email"
+required>
+
+</div>
+
+<div class="input-box">
+
+<label>Password</label>
+
+<input
+type="password"
+id="password"
+placeholder="Enter your password"
+required>
+
+</div>
+
+<div class="remember">
+
+<label>
+
+<input type="checkbox">
+
+Remember Me
+
+</label>
+
+<a href="forgot-password.html">Forgot Password?</a>
+
+</div>
+
+<button
+type="submit"
+class="btn login-btn">
+
+<i class="fa-solid fa-right-to-bracket"></i>
+
+Login
+
+</button>
+
+</form>
+
+
+<hr>
+
+<p class="register-text">
+
+Don't have an account?
+
+<a href="register.html">
+
+Create Account
+
+</a>
+
+</p>
+
+</div>
+
+<div class="login-image">
+
+<img
+src="images/login.png"
+alt="Login">
+
+</div>
+
+</div>
+
+</section>
+<!-- ================= WHY LOGIN ================= -->
+
+<section class="why-choose">
+
+    <h2>Why Create an RMJ Account?</h2>
+
+    <div class="why-container">
+
+        <div class="why-box">
+
+            <i class="fa-solid fa-cart-shopping"></i>
+
+            <h3>Easy Shopping</h3>
+
+            <p>Save your cart and checkout faster anytime.</p>
+
+        </div>
+
+        <div class="why-box">
+
+            <i class="fa-solid fa-box"></i>
+
+            <h3>Track Orders</h3>
+
+            <p>View your order history and shipping status.</p>
+
+        </div>
+
+        <div class="why-box">
+
+            <i class="fa-solid fa-gift"></i>
+
+            <h3>Exclusive Offers</h3>
+
+            <p>Get member-only discounts and promotions.</p>
+
+        </div>
+
+        <div class="why-box">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <h3>Secure Account</h3>
+
+            <p>Your personal information stays protected.</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="footer-container">
+
+<div>
+
+<h2>RMJ Kitchen Essentials</h2>
+
+<p>Premium Kitchen Products For Every Home.</p>
+
+</div>
+
+<div>
+
+<h3>Quick Links</h3>
+
+<a href="index.html">Home</a><br>
+<a href="shop.html">Shop</a><br>
+<a href="about.html">About</a><br>
+<a href="contact.html">Contact</a>
+
+</div>
+
+<div>
+
+<h3>Payments</h3>
+
+<p>✔ JazzCash</p>
+<p>✔ EasyPaisa</p>
+<p>✔ Cash On Delivery</p>
+
+</div>
+
+<div>
+
+<h3>Follow Us</h3>
+
+<a href="#"><i class="fab fa-facebook"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+<a href="#"><i class="fab fa-youtube"></i></a>
+<a href="#"><i class="fab fa-tiktok"></i></a>
+
+</div>
+
+</div>
+
+<hr>
+
+<p class="copyright">
+
+© 2026 RMJ Kitchen Essentials | All Rights Reserved.
+
+</p>
+
+</footer>
+<script>
+
+const loginForm = document.getElementById("loginForm");
+
+loginForm.addEventListener("submit", async (e)=>{
+
+e.preventDefault();
+
+const email=document.getElementById("email").value;
+const password=document.getElementById("password").value;
+
+const response=await fetch("/api/login",{
+
+method:"POST",
+
+headers:{
+"Content-Type":"application/json"
+},
+
+body:JSON.stringify({
+
+email,
+password
+
+})
+
+});
+
+const data=await response.json();
+
+alert(data.message);
+
+if(data.success){
+
+    localStorage.setItem("user", JSON.stringify(data.user));
+
+    if(data.user.role === "admin"){
+
+        window.location.href = "admin/dashboard.html";
+
+    }else{
+
+        window.location.href = "index.html";
+
+    }
+
+}
+
+});
+
+</script>
+
+<script src="js/script.js"></script>
+
+
+</body>
+
+</html>

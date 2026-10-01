@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Orders | RMJ Kitchen Essentials</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- Header -->
+<header>
+<nav class="navbar">
+
+    <a href="index.html" class="logo">
+        <img src="images/logo.jpeg" alt="RMJ Logo">
+    </a>
+
+    <!-- Desktop Menu -->
+    <ul class="nav-links" id="navLinks">
+
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="my-orders.html">My Orders</a></li>
+
+    </ul>
+
+    <!-- Right Side Icons -->
+
+    <div class="nav-icons">
+
+        <!-- Mobile Shop -->
+        <a href="shop.html" class="mobile-shop">
+            <i class="fa-solid fa-store"></i>
+        </a>
+
+        <!-- Cart -->
+        <a href="cart.html" class="cart-icon">
+            <i class="fa-solid fa-cart-shopping"></i>
+        </a>
+
+        <!-- Login -->
+        <a href="login.html" id="loginMenu" class="login-btn">
+            Login
+        </a>
+
+        <!-- Profile -->
+        <div id="profileMenu" style="display:none;"></div>
+
+        <!-- Hamburger -->
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    </div>
+
+</nav>
+</header>
+
+<section class="orders-page">
+
+<h1>My Orders</h1>
+
+<div id="ordersContainer">
+
+</div>
+
+</section>
+
+<script src="js/my-orders.js"></script>
+<!-- View Products Modal -->
+
+<div id="productsModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeProducts()">&times;</span>
+
+        <h2>Ordered Products</h2>
+
+        <div id="productsList"></div>
+
+    </div>
+
+</div>
+<script src="js/user-profile.js"></script>
+<script src="js/script.js"></script>
+
+
+</body>
+
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website Settings | RMJ Admin</title>
+
+<link rel="stylesheet" href="../css/admin.css">
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="admin-container">
+
+    <!-- Sidebar -->
+
+    <div class="sidebar">
+
+        <h2>RMJ Admin</h2>
+
+        <ul>
+
+            <li>
+                <a href="dashboard.html">
+                    <i class="fa-solid fa-gauge"></i>
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="products.html">
+                    <i class="fa-solid fa-box"></i>
+                    Products
+                </a>
+            </li>
+
+            <li>
+                <a href="orders.html">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Orders
+                </a>
+            </li>
+
+            <li>
+                <a href="users.html">
+                    <i class="fa-solid fa-users"></i>
+                    Users
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="settings.html">
+                    <i class="fa-solid fa-gear"></i>
+                    Website Settings
+                </a>
+            </li>
+            <li>
+    <a href="profile.html">
+        <i class="fa-solid fa-user"></i>
+        Admin Profile
+    </a>
+</li>
+<li>
+    <a href="change-password.html">
+        <i class="fa-solid fa-key"></i>
+        Change Password
+    </a>
+</li>
+
+            <li>
+                <a href="../login.html">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    Logout
+                </a>
+            </li>
+
+        </ul>
+
+    </div>
+
+    <!-- Main Content -->
+
+    <div class="main-content">
+
+        <div class="settings-container">
+
+            <div class="settings-card">
+
+                <h2>
+                    <i class="fa-solid fa-gear"></i>
+                    Website Settings
+                </h2>
+
+                <form id="settingsForm">
+
+                    <div class="settings-grid">
+
+                        <div class="settings-group">
+
+                            <label>Website Name</label>
+
+                            <input
+                                type="text"
+                                id="siteName"
+                                placeholder="Enter Website Name">
+
+                        </div>
+
+                        <div class="settings-group">
+
+                            <label>Support Email</label>
+
+                            <input
+                                type="email"
+                                id="siteEmail"
+                                placeholder="Enter Support Email">
+
+                        </div>
+
+                        <div class="settings-group">
+
+                            <label>Phone Number</label>
+
+                            <input
+                                type="text"
+                                id="sitePhone"
+                                placeholder="+92 300 1234567">
+
+                        </div>
+
+                        <div class="settings-group">
+
+                            <label>Website Address</label>
+
+                            <input
+                                type="text"
+                                id="siteAddress"
+                                placeholder="Lahore, Punjab, Pakistan">
+
+                        </div>
+
+                        <div class="settings-group" style="grid-column:1 / span 2;">
+
+                            <label>Working Hours</label>
+
+                            <input
+                                type="text"
+                                id="workingHours"
+                                placeholder="Monday - Saturday (9 AM - 7 PM)">
+
+                        </div>
+
+                    </div>
+
+                    <button
+                        type="submit"
+                        class="settings-btn">
+
+                        <i class="fa-solid fa-floppy-disk"></i>
+
+                        Save Settings
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../js/settings.js"></script>
+
+</body>
+</html>

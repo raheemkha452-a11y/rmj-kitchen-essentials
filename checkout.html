@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RMJ | Checkout</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+    <nav class="navbar">
+
+    <a href="index.html" class="logo">
+        <img src="images/logo.jpeg" alt="RMJ Logo">
+    </a>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="my-orders.html">My Orders</a></li>
+        <li id="loginMenu">
+    <a href="login.html">Login</a>
+</li>
+
+<li>
+    <a href="cart.html">
+        <i class="fa-solid fa-cart-shopping"></i>
+    </a>
+</li>
+
+<li id="profileMenu" style="display:none;"></li>
+    </ul>
+
+</nav>
+</header>
+<!-- ================= PAGE TITLE ================= -->
+
+<section class="shop-banner">
+
+<h1>Checkout</h1>
+
+<p>Complete your order securely.</p>
+
+</section>
+
+<!-- ================= CHECKOUT ================= -->
+
+<section class="checkout-container">
+
+<div class="checkout-form">
+
+<h2>Billing Details</h2>
+
+<form id="checkoutForm">
+
+<div class="input-group">
+
+<label>Full Name</label>
+
+<input type="text" id="fullName" placeholder="Enter Full Name" required>
+
+</div>
+
+<div class="input-group">
+
+<label>Email Address</label>
+
+<input type="email" id="email" placeholder="Enter Email" required>
+
+</div>
+
+<div class="input-group">
+
+<label>Phone Number</label>
+
+<input type="tel" id="phone" placeholder="+92 300 1234567" required>
+
+</div>
+
+<div class="input-group">
+
+<label>Province</label>
+
+<select id="province" required>
+
+<option>Select Province</option>
+
+<option>Punjab</option>
+
+<option>Sindh</option>
+
+<option>KPK</option>
+
+<option>Balochistan</option>
+
+<option>Gilgit Baltistan</option>
+
+<option>AJK</option>
+
+</select>
+
+</div>
+
+<div class="input-group">
+
+<label>City</label>
+
+<input type="text" id="city" placeholder="Enter City" required>
+
+</div>
+
+<div class="input-group">
+
+<label>Shipping Address</label>
+
+<textarea id="address" rows="4" placeholder="House No, Street, Area..." required></textarea>
+
+</div>
+
+<h2>Payment Method</h2>
+
+<div class="payment-method">
+
+<label>
+
+<input type="radio" name="payment" checked>
+
+Cash On Delivery
+
+</label>
+
+<label>
+
+<input type="radio" name="payment">
+
+JazzCash
+
+</label>
+
+<label>
+
+<input type="radio" name="payment">
+
+EasyPaisa
+
+</label>
+
+</div>
+
+</form>
+
+</div>
+
+<!-- ================= ORDER SUMMARY ================= -->
+
+<div class="order-summary">
+
+<h2>Your Order</h2>
+
+<div id="orderItems"></div>
+
+<div class="summary-item">
+
+    <span>Delivery</span>
+
+    <span>Rs. 250</span>
+
+</div>
+
+<hr>
+
+<div class="summary-total">
+
+    <strong>Total</strong>
+
+    <strong id="grandTotal">Rs. 0</strong>
+
+</div>
+
+<button id="placeOrderBtn" class="btn">
+
+    <i class="fa-solid fa-lock"></i>
+
+    Place Order
+
+</button>
+
+</div>
+
+</section>
+<!-- ================= ORDER INFORMATION ================= -->
+
+<section class="why-choose">
+
+    <h2>Why Shop With RMJ?</h2>
+
+    <div class="why-container">
+
+        <div class="why-box">
+
+            <i class="fa-solid fa-truck-fast"></i>
+
+            <h3>Fast Delivery</h3>
+
+            <p>Delivery available across Pakistan within 2-5 working days.</p>
+
+        </div>
+
+        <div class="why-box">
+
+            <i class="fa-solid fa-shield-halved"></i>
+
+            <h3>100% Secure Payment</h3>
+
+            <p>Your payment information is always safe and protected.</p>
+
+        </div>
+
+        <div class="why-box">
+
+            <i class="fa-solid fa-box-open"></i>
+
+            <h3>Premium Packaging</h3>
+
+            <p>Every order is packed carefully to avoid any damage.</p>
+
+        </div>
+
+        <div class="why-box">
+
+            <i class="fa-solid fa-headset"></i>
+
+            <h3>Customer Support</h3>
+
+            <p>Our support team is available to help you anytime.</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-container">
+
+        <div>
+
+            <h2>RMJ Kitchen Essentials</h2>
+
+            <p>
+                Premium Kitchen Products For Every Home.
+            </p>
+
+        </div>
+
+        <div>
+
+            <h3>Quick Links</h3>
+
+            <a href="index.html">Home</a><br>
+            <a href="shop.html">Shop</a><br>
+            <a href="about.html">About</a><br>
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+        <div>
+
+            <h3>Payment Methods</h3>
+
+            <p>✔ JazzCash</p>
+            <p>✔ EasyPaisa</p>
+            <p>✔ Cash On Delivery</p>
+
+        </div>
+
+        <div>
+
+            <h3>Follow Us</h3>
+
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+
+        </div>
+
+    </div>
+
+    <hr>
+
+    <p class="copyright">
+
+        © 2026 RMJ Kitchen Essentials | All Rights Reserved.
+
+    </p>
+
+</footer>
+<script src="js/checkout.js"></script>
+<script src="js/user-profile.js"></script>
+<script src="js/script.js"></script>
+
+</body>
+
+</html>

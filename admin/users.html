@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RMJ Admin | Users</title>
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/admin.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="admin-container">
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<h2>RMJ Admin</h2>
+
+<ul>
+
+<li><a href="dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+
+<li><a href="products.html"><i class="fa-solid fa-box"></i> Products</a></li>
+
+<li><a href="orders.html"><i class="fa-solid fa-cart-shopping"></i> Orders</a></li>
+
+<li><a href="users.html" class="active"><i class="fa-solid fa-users"></i> Users</a></li>
+<li>
+    <a href="settings.html">
+        <i class="fa-solid fa-gear"></i>
+        Website Settings
+    </a>
+</li>
+<li>
+    <a href="profile.html">
+        <i class="fa-solid fa-user"></i>
+        Admin Profile
+    </a>
+</li>
+<li>
+    <a href="change-password.html">
+        <i class="fa-solid fa-key"></i>
+        Change Password
+    </a>
+</li>
+
+<li><a href="../index.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+
+</ul>
+
+</div>
+
+<!-- Main Content -->
+
+<div class="admin-content">
+
+<h1>Users Management</h1>
+
+<p class="page-subtitle">
+Manage all registered users from one place.
+</p>
+
+<!-- Statistics -->
+
+<div class="stats-container">
+
+<div class="stat-card">
+
+<i class="fa-solid fa-users"></i>
+
+<h2 id="totalUsers">0</h2>
+
+<p>Total Users</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fa-solid fa-user-shield"></i>
+
+<h2 id="totalAdmins">0</h2>
+
+<p>Admins</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fa-solid fa-user-check"></i>
+
+<h2 id="activeUsers">0</h2>
+
+<p>Active Users</p>
+
+</div>
+
+<div class="stat-card">
+
+<i class="fa-solid fa-user-plus"></i>
+
+<h2 id="newUsers">0</h2>
+
+<p>New Users</p>
+
+</div>
+
+</div>
+
+<!-- Search -->
+
+<div class="search-bar">
+
+<input
+type="text"
+id="searchUser"
+placeholder="Search Users...">
+
+</div>
+
+<!-- Users Table -->
+
+<table class="product-table">
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Name</th>
+
+<th>Email</th>
+
+<th>Role</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="usersTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<script src="../js/users.js"></script>
+
+</body>
+
+</html>

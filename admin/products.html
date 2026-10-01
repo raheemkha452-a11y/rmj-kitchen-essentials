@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RMJ Admin | Products</title>
+
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/admin.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+</head>
+
+<body>
+
+<div class="admin-container">
+
+<!-- Sidebar -->
+
+<div class="sidebar">
+
+<h2>RMJ Admin</h2>
+
+<ul>
+
+<li><a href="dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a></li>
+
+<li><a href="products.html" class="active"><i class="fa-solid fa-box"></i> Products</a></li>
+
+
+<li><a href="orders.html"><i class="fa-solid fa-cart-shopping"></i> Orders</a></li>
+
+
+<li><a href="users.html"><i class="fa-solid fa-users"></i> Users</a></li>
+<li>
+    <a href="settings.html">
+        <i class="fa-solid fa-gear"></i>
+        Website Settings
+    </a>
+</li>
+<li>
+    <a href="profile.html">
+        <i class="fa-solid fa-user"></i>
+        Admin Profile
+    </a>
+</li>
+<li>
+    <a href="change-password.html">
+        <i class="fa-solid fa-key"></i>
+        Change Password
+    </a>
+</li>
+
+
+<li><a href="../index.html"><i class="fa-solid fa-right-from-bracket"></i> Logout</a></li>
+
+</ul>
+
+</div>
+
+<div class="admin-content">
+
+<h1>Product Management</h1>
+
+<form class="product-form" id="productForm" enctype="multipart/form-data">
+
+<input
+type="text"
+id="productName"
+placeholder="Product Name">
+
+<input
+type="number"
+id="productPrice"
+placeholder="Price">
+
+<input
+type="text"
+id="productCategory"
+placeholder="Category">
+
+<input
+type="number"
+id="productStock"
+placeholder="Stock">
+
+<textarea
+id="productDescription"
+placeholder="Product Description">
+</textarea>
+
+<div class="input-box">
+
+<label>Product Image</label>
+
+<input
+type="file"
+id="productImage"
+accept="image/*">
+
+</div>
+<button id="addProductBtn">
+
+<i class="fa-solid fa-plus"></i>
+
+Add Product
+
+</button>
+
+</form>
+
+<h2>All Products</h2>
+
+<table class="product-table">
+
+<thead>
+
+<tr>
+
+<th>ID</th>
+
+<th>Image</th>
+
+<th>Name</th>
+
+<th>Price</th>
+
+<th>Category</th>
+
+<th>Stock</th>
+
+<th>Action</th>
+
+</tr>
+
+</thead>
+
+<tbody id="productTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+<script>
+alert(document.getElementById("productTable"));
+</script>
+
+<script src="../js/products.js"></script>
+
+</body>
+
+</html>

@@ -1,162 +1,85 @@
-const sqlite3 = require("sqlite3").verbose();
-const path = require("path");
+require("dotenv").config();
 
-const dbPath = path.join(__dirname, "rmj.db");
+const { createClient } = require("@libsql/client");
 
-const db = new sqlite3.Database(dbPath, (err) => {
+const client = createClient({
+    url: process.env.TURSO_DATABASE_URL,
+    authToken: process.env.TURSO_AUTH_TOKEN
+});
 
-    if (err) {
+// --------------------------------------------------
+// Compatibility wrapper
+// Existing routes use db.run(), db.get(), db.all()
+// --------------------------------------------------
 
-        console.log("❌ Database Connection Failed");
-        console.log(err.message);
+const db = {
 
-    } else {
+    run(sql, params = [], callback = () => {}) {
 
-        console.log("✅ SQLite Database Connected");
+        client.execute({
+            sql,
+            args: params
+        })
+        .then(result => {
 
+            const context = {
+                changes: Number(result.rowsAffected || 0),
+                lastID: result.lastInsertRowid
+                    ? Number(result.lastInsertRowid)
+                    : undefined
+            };
+
+            callback.call(context, null);
+
+        })
+        .catch(err => {
+            callback.call({}, err);
+        });
+
+    },
+
+    get(sql, params = [], callback = () => {}) {
+
+        client.execute({
+            sql,
+            args: params
+        })
+        .then(result => {
+
+            const row = result.rows.length > 0
+                ? result.rows[0]
+                : undefined;
+
+            callback(null, row);
+
+        })
+        .catch(err => {
+            callback(err);
+        });
+
+    },
+
+    all(sql, params = [], callback = () => {}) {
+
+        client.execute({
+            sql,
+            args: params
+        })
+        .then(result => {
+
+            callback(null, result.rows);
+
+        })
+        .catch(err => {
+            callback(err);
+        });
+
+    },
+
+    serialize(callback) {
+        callback();
     }
 
-});
-
-db.serialize(() => {
-
-    // ================= REVIEWS TABLE =================
-
-db.run(`
-CREATE TABLE IF NOT EXISTS reviews(
-
-id INTEGER PRIMARY KEY AUTOINCREMENT,
-
-product_id INTEGER,
-
-name TEXT,
-
-rating INTEGER,
-
-review TEXT,
-
-created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-
-)
-`);
-
-    // ================= ORDERS TABLE =================
-
-    db.run(`
-        CREATE TABLE IF NOT EXISTS orders (
-
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-
-            fullName TEXT,
-
-            email TEXT,
-
-            phone TEXT,
-
-            province TEXT,
-
-            city TEXT,
-
-            address TEXT,
-
-            payment TEXT,
-
-            total INTEGER,
-
-            items TEXT,
-
-            status TEXT DEFAULT 'Pending',
-
-            created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-
-        )
-    `);
-    // ================= REVIEWS TABLE =================
-
-db.run(`
-CREATE TABLE IF NOT EXISTS reviews(
-
-id INTEGER PRIMARY KEY AUTOINCREMENT,
-
-product_id INTEGER,
-
-name TEXT,
-
-rating INTEGER,
-
-review TEXT,
-
-created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-
-)
-`);
-    // ================= USERS TABLE =================
-
-db.run(`
-CREATE TABLE IF NOT EXISTS users(
-
-id INTEGER PRIMARY KEY AUTOINCREMENT,
-
-name TEXT,
-
-email TEXT UNIQUE,
-
-password TEXT,
-
-role TEXT DEFAULT 'user'
-
-)
-`);
-
-    // ================= ADMIN PROFILE TABLE =================
-
-    db.run(`
-        CREATE TABLE IF NOT EXISTS admin_profile(
-
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-
-            name TEXT,
-
-            email TEXT,
-
-            phone TEXT,
-
-            image TEXT
-
-        )
-    `);
-    
-
-    // ================= DEFAULT ADMIN PROFILE =================
-
-    db.get(
-        "SELECT * FROM admin_profile LIMIT 1",
-        (err, row) => {
-
-            if (!row) {
-
-                db.run(`
-                    INSERT INTO admin_profile
-                    (
-                        name,
-                        email,
-                        phone,
-                        image
-                    )
-                    VALUES
-                    (
-                        'Admin',
-                        'admin@rmj.com',
-                        '+92 300 1234567',
-                        ''
-                    )
-                `);
-
-            }
-
-        }
-    );
-
-});
+};
 
 module.exports = db;
